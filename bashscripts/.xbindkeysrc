@@ -1,0 +1,31 @@
+# Increase volume
+"sh ~/bashscripts/sound.sh up"  
+    XF86AudioRaiseVolume
+
+# Decrease volume
+"sh ~/bashscripts/sound.sh down"  
+    XF86AudioLowerVolume
+
+# Toggle mute
+"sh ~/bashscripts/sound.sh mute"  
+    XF86AudioMute
+
+# Togger mic
+"sh ~/bashscripts/sound.sh mic"
+    XF86AudioMicMute
+
+# Raise Brightness
+"sh ~/bashscripts/brightness.sh inc"  
+    XF86MonBrightnessUp
+
+# Lower Brightness
+"sh ~/bashscripts/brightness.sh dec"  
+    XF86MonBrightnessDown
+
+# Print Screen
+"/usr/bin/scrot ~/Pictures/scrot/%b%d::%H%M%S.png"
+    Print
+
+# Search (dmenu)
+"/usr/bin/dmenu_run"
+    XF86Search
