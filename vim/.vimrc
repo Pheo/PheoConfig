@@ -1,31 +1,79 @@
-" Pheo's .vimrc 
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" Pathogen
-execute pathogen#infect()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" General Options
-syntax enable
-filetype plugin indent on
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
+" All Plugins Here
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'scrooloose/syntastic'
+Plugin 'walm/jshint.vim'
+Plugin 'bling/vim-airline'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+" End All Plugins
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Set swap files dir
+set swapfile
+set dir=~/tmp
+
+" Guifont
+set guifont=Inconsolata\ Medium\ 12
+
+
+" Jap Stuff
+" set fileencodings=iso-2022-jp,euc-jp,cp932,utf8,default,latin1
+
+" Line Numbers
 set number
 
-" Themes
-if has("gui_running")
-	set background=dark
-	colorscheme solarized
-else
-	set background=dark
-	colorscheme jellybeans
-	hi Normal ctermbg=NONE
-	hi NonText ctermbg=NONE
-	hi LineNr ctermbg=NONE
+" Needed for vim-airline to show
+set laststatus=2
 
-endif
+" Turn on Syntax Highlighting
+syntax on
 
-" Tabs stuff
-set noexpandtab
-set shiftwidth=4
+" Tab Shit
 set tabstop=4
+set expandtab
+set shiftwidth=4
 
-let g:clang_library_path = '/usr/lib'
-let g:clang_complete_auto = 1
+" Fuckin' Color Scheme
+colorscheme slate
+
+" No broken fuck paste comments
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" X Clipboard
+set clipboard=unnamedplus,unnamed
+
+" 80 column highlight
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
+" Omnifunc enable
+set omnifunc=syntaxcomplete#Complete
+
+" If you prefer the Omni-Completion tip window to close when a selection is
+" made, these lines close it on movement in insert mode or when leaving
+" insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" YCM Settings
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_confirm_extra_conf = 0
+
+" Python 2/3
+let g:syntastic_python_python_exec = '/usr/bin/python2'
+
