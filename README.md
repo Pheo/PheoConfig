@@ -3,8 +3,13 @@ PheoConfig
 
 Pheo's Dev. Env. settings
 
-###Vim (./vim/)
-* ./vim/.vimrc/
- * vimrc file. Include gvimrc settings.
- * ./vim/.bundle/
-  * plugins (installed via pathogen)
+Also to backup my bashscripts incase I rm my home directory like a retard again =_=
+
+###Vim
+  * .vimrc
+
+###bashscripts
+  * brightness.sh
+  * multimon\_mdp.sh
+  * multimon\_vga.sh
+  * sound.sh
