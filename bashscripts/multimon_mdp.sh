@@ -15,5 +15,7 @@ case $1 in
         $EXE $BASEARGS --right-of $PRIMARY;;
     "same" )
         $EXE $BASEARGS --same-as $PRIMARY;;
+    * )
+        echo "above | below | left | right | same"
 esac
 
