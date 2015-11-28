@@ -1,8 +1,8 @@
 #!/bin/sh
 
 EXE="/bin/xrandr"
-BASEARGS="--output DisplayPort-0 --mode 1920x1080"
-PRIMARY="eDP-0"
+BASEARGS="--output DP-2 --mode 1920x1080"
+PRIMARY="eDP-1"
 
 case $1 in
     "above" )
